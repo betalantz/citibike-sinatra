@@ -2,7 +2,7 @@
 
 ## Objectives
 1. create a form in HTML
-2. using ERB population a select element with options from a JSON file
+2. using ERB, populate a select element with options from a JSON file
 3. set values of options to data from the JSON file
 3. create a route to respond to a post from the form
 4. create instance variables from the params of the post to use in a map view
@@ -43,7 +43,7 @@ The app has a single route, at `"\"` that will simple print out the contents of 
   <%= @data.inspect %>
 ```
 
-Change the code in home.erb so that it prints a list of every station name, followed by it's longitude and latitude.
+Change the code in home.erb so that it prints a list of every station name, followed by it's latitude and longitude.
 
 ### Make a form
 
