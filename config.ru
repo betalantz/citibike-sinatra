@@ -1,3 +1,3 @@
-require File.join(File.dirname(__FILE__), 'app.rb')
+require_relative './config/env'
 
 run Citibike::App
