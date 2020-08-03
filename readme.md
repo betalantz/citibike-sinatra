@@ -11,7 +11,8 @@
 ## Instructions
 
 ### Get up and running
-1. fork and then clone this repo: [https://github.com/ashleygwilliams/citibike-sinatra](https://github.com/ashleygwilliams/citibike-sinatra)
+1. fork and then clone this repo: [git@github.com:betalantz/citibike-sinatra.git](git@github.com:betalantz/citibike-sinatra.git)
+  - This is my fork of [https://github.com/ashleygwilliams/citibike-sinatra](https://github.com/ashleygwilliams/citibike-sinatra) and makes changes to the README
 2. `bundle install`
 3. `bundle exec shotgun`
 4. `localhost:9393`
@@ -52,6 +53,8 @@ Change the code in home.erb so that it prints a list of every station name, foll
 4. inside your view, create a `<form>` element with 2 `<select>` elements, one with `name="start"` and the other with `name="end"`. also create a submit button.
 5. label each `<select>` element with the words "start:" and "end:" respectively 
 6. inside the `<select>` elements, loop through the data hash and create an `<option>` element for each station with the `value` of the station name
+
+If you are unfamiliar with creating drop-down menus with `<select>`, see this link to [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
 
 you should now have a form that looks like this:
 ![form](http://content.screencast.com/users/ag_dubs/folders/Jing/media/abca7668-8e7f-4213-a8ac-ac0fa61613c8/00000047.png)
@@ -112,7 +115,7 @@ ok awesome, so now we have an array for the starting location and the ending loc
 
 you can add a marker to a leaflet map using the following code.
 ```javascript
-L.marker([longitude, latitude]).addTo(map);
+L.marker([latitude, longitude]).addTo(map);
 ```
 here:
 - `L` is the leaflet library
