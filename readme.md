@@ -2,7 +2,7 @@
 
 ## Objectives
 1. create a form in HTML
-2. using ERB population a select element with options from a JSON file
+2. using ERB, populate a select element with options from a JSON file
 3. set values of options to data from the JSON file
 3. create a route to respond to a post from the form
 4. create instance variables from the params of the post to use in a map view
@@ -11,8 +11,9 @@
 ## Instructions
 
 ### Get up and running
-1. fork and then clone this repo: [https://github.com/ashleygwilliams/citibike-sinatra](https://github.com/ashleygwilliams/citibike-sinatra)
-2. `bundle install`
+1. fork and then clone this repo: [git@github.com:betalantz/citibike-sinatra.git](git@github.com:betalantz/citibike-sinatra.git)
+  - This is my fork of [https://github.com/ashleygwilliams/citibike-sinatra](https://github.com/ashleygwilliams/citibike-sinatra) and makes changes to the README
+2. `bundle install` (If you get errors, try `bundle update`)
 3. `bundle exec shotgun`
 4. `localhost:9393`
 
@@ -28,7 +29,7 @@ This app is using the MultiJSON gem to load in data. If you look in `app.rb` you
   end
 ```
 
-The app has a single route, at `"\"` that will simple print out the contents of `@data`.
+The app has a single route, at `"/"` that will simply print out the contents of `@data`.
 ```ruby
 #app.rb
 
@@ -42,7 +43,7 @@ The app has a single route, at `"\"` that will simple print out the contents of 
   <%= @data.inspect %>
 ```
 
-Change the code in home.erb so that it prints a list of every station name, followed by it's longitude and latitude.
+Change the code in home.erb so that it prints a list of every station name, followed by it's latitude and longitude.
 
 ### Make a form
 
@@ -53,6 +54,8 @@ Change the code in home.erb so that it prints a list of every station name, foll
 5. label each `<select>` element with the words "start:" and "end:" respectively 
 6. inside the `<select>` elements, loop through the data hash and create an `<option>` element for each station with the `value` of the station name
 
+If you are unfamiliar with creating drop-down menus with `<select>`, see this link to [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
+
 you should now have a form that looks like this:
 ![form](http://content.screencast.com/users/ag_dubs/folders/Jing/media/abca7668-8e7f-4213-a8ac-ac0fa61613c8/00000047.png)
 
@@ -60,7 +63,7 @@ you should now have a form that looks like this:
 1. your form should post to `/form`, so update your `<form>` element
 2. create a route in `app.rb`
 3. investigate your form's response by printing `params` to the browser when the form is submitted
-4. once you feel comfortable with your form's response, change the response to a string that read "You chose ______ and _______" where the blanks contain the name of the station that the user chose
+4. once you feel comfortable with your form's response, change the response to a string that reads "You chose ______ and _______" where the blanks contain the name of the station that the user chose
 
 ### MAP what?
 the app you cloned also has a view called `map.erb`. this map uses [leaflet.js](http://leafletjs.com). the code in the view looks like this:
@@ -98,9 +101,9 @@ so we're getting name data, but we actually want longitude and latitude data. wh
 
 1. take a moment and look at your code. can you change the params that the form is sending to the map view? what are your options? play around for a second.
 
-so, the params are determined by the `value` attribute of the `<select>` element. originally, we were just putting the station's name in there.. but we can change that.
+so, the params are determined by the `value` attribute of the `<option>` elements. originally, we were just putting the station's name in there. but we can change that.
 
-2. change ther `value` of each `<select>` element to an array, where the first element is the latitude and the second element is the longitude of any given station. test this by printing the params to the map page. you'll want to see something like this:
+2. change the `value` of each `<option>` element to an array, where the first element is the latitude and the second element is the longitude of any given station. test this by printing the params to the map page. you'll want to see something like this:
 
 ![latlong](http://content.screencast.com/users/ag_dubs/folders/Jing/media/6283fefe-4e30-4e5b-b09c-89a3de24e330/00000050.png)
 
@@ -112,7 +115,7 @@ ok awesome, so now we have an array for the starting location and the ending loc
 
 you can add a marker to a leaflet map using the following code.
 ```javascript
-L.marker([longitude, latitude]).addTo(map);
+L.marker([latitude, longitude]).addTo(map);
 ```
 here:
 - `L` is the leaflet library
