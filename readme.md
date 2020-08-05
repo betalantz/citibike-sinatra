@@ -13,7 +13,7 @@
 ### Get up and running
 1. fork and then clone this repo: [git@github.com:betalantz/citibike-sinatra.git](git@github.com:betalantz/citibike-sinatra.git)
   - This is my fork of [https://github.com/ashleygwilliams/citibike-sinatra](https://github.com/ashleygwilliams/citibike-sinatra) and makes changes to the README
-2. `bundle install`
+2. `bundle install` (If you get errors, try `bundle update`)
 3. `bundle exec shotgun`
 4. `localhost:9393`
 
@@ -29,7 +29,7 @@ This app is using the MultiJSON gem to load in data. If you look in `app.rb` you
   end
 ```
 
-The app has a single route, at `"\"` that will simple print out the contents of `@data`.
+The app has a single route, at `"/"` that will simply print out the contents of `@data`.
 ```ruby
 #app.rb
 
