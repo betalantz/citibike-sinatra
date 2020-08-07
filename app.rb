@@ -26,12 +26,11 @@ module Citibike
     end
 
     post '/map' do
-      # binding.pry
-      start, finish = params[:start].split(" "), params[:end].split(" ")
-      @s_lat = start[0].gsub(/[^-0-9]/, "").to_f/1000000.0
-      @s_lng = start[1].gsub(/[^-0-9]/, "").to_f/1000000.0
-      @e_lat = finish[0].gsub(/[^-0-9]/, "").to_f/1000000.0
-      @e_lng = finish[1].gsub(/[^-0-9]/, "").to_f/1000000.0
+      start, finish = params[:start].split(","), params[:end].split(",")
+      @s_lat = start[0].to_f/1000000.0
+      @s_lng = start[1].to_f/1000000.0
+      @e_lat = finish[0].to_f/1000000.0
+      @e_lng = finish[1].to_f/1000000.0
       erb :map
     end
 

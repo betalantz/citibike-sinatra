@@ -3,13 +3,13 @@
     <label for="start-select">Choose your start:</label>
     <select name="start" id="start-select">
         <% @data.each do |d| %>
-            <option value="[<%= d["lat"] %>, <%= d["lng"] %>]"><%= d["name"] %></option>
+            <option value="<%= d["lat"] %>, <%= d["lng"] %>"><%= d["name"] %></option>
         <% end %>
     </select>
     <label for="end-select">Choose your end:</label>
     <select name="end" id="end-select">
         <% @data.each do |d| %>
-            <option value="[<%= d["lat"] %>, <%= d["lng"] %>]"><%= d["name"] %></option>
+            <option value="<%= d["lat"] %>, <%= d["lng"] %>"><%= d["name"] %></option>
         <% end %>
     </select>
     <input type="submit" value='Submit'>
